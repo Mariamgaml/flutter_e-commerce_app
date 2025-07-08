@@ -1,5 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constants/app_fonts.dart';
+import 'package:flutter_application_1/core/constants/app_images.dart';
+import 'package:flutter_application_1/core/constants/app_strings.dart';
+import 'package:flutter_application_1/core/routes/app_routes.dart';
+
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -15,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
 
     Timer(const Duration(seconds: 3), () {
      
-      Navigator.pushReplacementNamed(context, '/onboarding');
+      Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
     });
   }
 
@@ -28,17 +33,18 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/logo.png', // تأكد من وجود هذا الملف في المسار الصحيح
+              AppImages.splashLogo,
               width: 80,
               height: 80,
             ),
             const SizedBox(width: 12),
             const Text(
-              'Stylish',
+              AppStrings.splashTitle,
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
                 color: Colors.pink,
+                fontFamily: AppFonts.montserrat,
               ),
             ),
           ],

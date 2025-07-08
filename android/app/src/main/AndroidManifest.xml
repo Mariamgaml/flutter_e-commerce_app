@@ -1,8 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.flutter_application_1">
     <application
         android:label="flutter_application_1"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -17,8 +20,8 @@
                  while the Flutter UI initializes. After that, this theme continues
                  to determine the Window background behind the Flutter UI. -->
             <meta-data
-              android:name="io.flutter.embedding.android.NormalTheme"
-              android:resource="@style/NormalTheme"
+             android:name="com.google.android.gms.auth.api.credentials.impl.CredentialsApiImpl"
+             android:value="@string/default_web_client_id" 
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
