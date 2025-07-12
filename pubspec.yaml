@@ -38,6 +38,13 @@ dependencies:
   firebase_auth: ^4.17.4
   google_sign_in: ^6.2.1
   flutter_facebook_auth: ^6.0.3
+  supabase_flutter: ^2.0.0
+  internet_connection_checker_plus: ^2.1.0
+  equatable: ^2.0.5
+  dartz: ^0.10.1
+  shared_preferences: ^2.2.2
+  email_validator: ^2.1.17
+  get_it: ^7.6.4
   bloc: ^8.1.4
 
 dev_dependencies:

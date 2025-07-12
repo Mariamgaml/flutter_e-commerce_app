@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/features/authentication/domain/repositories/auth_repository.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 // import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class FirebaseAuthRepository implements AuthRepository {
@@ -41,47 +41,35 @@ class FirebaseAuthRepository implements AuthRepository {
   @override
   User? get currentUser => _firebaseAuth.currentUser;
 
-  @override
-  Future<User?> signInWithGoogle() async {
-    final GoogleSignIn googleSignIn = GoogleSignIn();
-    final googleUser = await googleSignIn.signIn();
+  // @override
+  // Future<User?> signInWithGoogle() async {
+  //   final GoogleSignIn googleSignIn = GoogleSignIn();
+  //   final googleUser = await googleSignIn.signIn();
 
-    if (googleUser == null) return null;
+  //   if (googleUser == null) return null;
 
-    final googleAuth = await googleUser.authentication;
+  //   final googleAuth = await googleUser.authentication;
 
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
+  //   final credential = GoogleAuthProvider.credential(
+  //     accessToken: googleAuth.accessToken,
+  //     idToken: googleAuth.idToken,
+  //   );
 
-    final result = await _firebaseAuth.signInWithCredential(credential);
-    return result.user;
-  }
+  //   final result = await _firebaseAuth.signInWithCredential(credential);
+  //   return result.user;
+  // }
 
-  @override
-  Future<User?> signInWithApple() async {
-    if (defaultTargetPlatform != TargetPlatform.iOS &&
-        defaultTargetPlatform != TargetPlatform.macOS) {
-      throw UnsupportedError('Apple Sign-In is only available on iOS and macOS.');
-    }
-    return null;
-  }
-}
-    // final appleCredential = await SignInWithApple.getAppleIDCredential(
-    //   scopes: [
-    //     AppleIDAuthorizationScopes.email,
-    //     AppleIDAuthorizationScopes.fullName,
-    //   ],
-    // );
+//   @override
+//   Future<User?> signInWithApple() async {
+//     if (defaultTargetPlatform != TargetPlatform.iOS &&
+//         defaultTargetPlatform != TargetPlatform.macOS) {
+//       throw UnsupportedError('Apple Sign-In is only available on iOS and macOS.');
+//     }
+//     return null;
+//   }
+ }
+    
 
-    // final oauthCredential = OAuthProvider("apple.com").credential(
-    //   idToken: appleCredential.identityToken,
-    //   accessToken: appleCredential.authorizationCode,
-    // );
-
-    //   final result = await _firebaseAuth.signInWithCredential(oauthCredential);
-    //   return result.user;
-    // }
+     
   
 
